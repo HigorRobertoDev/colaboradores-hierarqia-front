@@ -1,0 +1,100 @@
+<html ng-app="testApp">
+  <head>
+    <title>AngularJS $Http service tutorial example</title>
+    <script src="angular.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body ng-controller="tableController">
+    <div class="div-style">
+      <h2>Cadastro de Colaborador</h2>
+      <p>
+        <label class="color-label"><b>Nome</b></label>
+        <input class="label-style" type="text" ng-model="nomeColaborador"/>
+      </p>
+
+      <p>
+        <label class="color-label"><b>Senha</b></label>
+        <input class="label-style" type="text" ng-model="senhaColaborado"/>
+      </p>
+      
+      <p>
+        <label class="color-label"><b>Hierarquia</b></label>
+        <select class="label-style" ng-model="hierarquiaColaborador">
+          <option value="">---Selecione---</option>
+          <option value="1">GERENTE</option>
+          <option value="2">COORDENADOR</option>
+          <option value="3">AUXILIAR</option>
+        </select>
+      </p>
+      
+      <button class="button" ng-click="getRequest()">Salvar Colaborador</button>
+    </div>
+    <br>
+    <div class="div-style">
+      <h2>Lista de Colaboradores Gerentes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>score</th>
+            <th>complexity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="colaborador in colaboradorGerente">
+            <td>{{ colaborador.id }}</td>
+            <td>{{ colaborador.nome }}</td>
+            <td>{{ colaborador.score }} %</td>
+            <td>{{ colaborador.complexity }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <div class="div-style">
+      <h2>Lista de Colaboradores Coordenadores</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>score</th>
+            <th>complexity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="colaborador in colaboradorCoordenador">
+            <td>{{ colaborador.id }}</td>
+            <td>{{ colaborador.nome }}</td>
+            <td>{{ colaborador.score }} %</td>
+            <td>{{ colaborador.complexity }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <div class="div-style">
+      <h2>Lista de Colaboradores Auxiliares</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>score</th>
+            <th>complexity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="colaborador in colaboradorAuxiliar">
+            <td>{{ colaborador.id }}</td>
+            <td>{{ colaborador.nome }}</td>
+            <td>{{ colaborador.score }} %</td>
+            <td>{{ colaborador.complexity }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
